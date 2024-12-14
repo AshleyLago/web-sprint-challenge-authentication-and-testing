@@ -1,3 +1,12 @@
+/*
+  #### **Authentication Workflow**
+  - [ ] Implement [POST] `/api/auth/register` to create a new account
+      - [ ] Hash user passwords using bcryptjs
+  - [ ] Implement [POST] `/api/auth/login` to generate a JWT token upon successful login
+      - [ ] Use jsonwebtoken library to create the token
+  - [ ] Create `auth-router.js` inside `api/auth/` to manage authentication routes
+*/
+
 const router = require('express').Router();
 
 router.post('/register', (req, res) => {
