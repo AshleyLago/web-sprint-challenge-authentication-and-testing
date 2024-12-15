@@ -11,10 +11,11 @@ function getByUsername(username) {
     .first()
  }
 
-function add(user) {
-  return db('users')
-  .insert(user)
-  .returning(['id', 'username', 'password'])
+ async function add(user) {
+  const [newUser] = await db('users')
+    .insert(user)
+    .returning(['id', 'username', 'password']);
+  return newUser;
 }
 
 module.exports = {
